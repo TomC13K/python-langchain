@@ -22,15 +22,36 @@ def lookup(name: str) -> str:
     llm = ChatOllama(model="llama3.1")
     template = """given the full name {name_of_person} I want you to get it me a link to their Linkedin profile page.
                           Your answer should contain only a URL"""
+    # https://python.langchain.com/api_reference/langchain/agents/langchain.agents.react.agent.create_react_agent.html
+    # template= '''Answer the following questions as best you can.
+    #
+    # Use the following format:
+    #
+    # Question: the input question you must answer
+    # Thought: you should always think about what to do
+    # Action: the action to take
+    # Action Input: the input to the action
+    # Observation: the result of the action
+    # ... (this Thought/Action/Action Input/Observation can repeat N times)
+    # Thought: I now know the final answer
+    # Final Answer: the final answer to the original input question
+    #
+    # Begin!
+    #
+    # Question: Given the full name {name_of_person} I want you to get it me a link to their Linkedin profile page.Your answer should contain only a URL
+    # Thought:'''
 
     prompt_template = PromptTemplate(
         template=template, input_variables=["name_of_person"]
     )
+
+
+
     tools_for_agent = [
         Tool(
             name="Crawl Google 4 linkedin profile page",
             func=get_profile_url_tavily,
-            description="useful for when you need get the Linkedin Page URL",
+            description=f"useful for when you need get the Linkedin Page URL",
         )
     ]
 
@@ -46,5 +67,5 @@ def lookup(name: str) -> str:
     return linked_profile_url
 
 if __name__ == "__main__":
-    linked_profile_url = lookup(name="Eden MArco")
+    linked_profile_url = lookup(name="Eden Marco")
     print(linked_profile_url)
