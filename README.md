@@ -17,3 +17,6 @@ https://smith.langchain.com/hub/hwchase17/react
 ### Tavily
 - real time accurate search for AI apps, output tailored for LLMs & RAG 
 https://tavily.com/
+
+## Tracing / observing the agent Langsmith
+https://www.langchain.com/langsmith
