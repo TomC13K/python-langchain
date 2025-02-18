@@ -6,7 +6,7 @@ load_dotenv()
 
 # mock - we can use some mocekd file/ endpoint like git gist
 # if false we can use API call of an external service
-def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = False):
+def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = True):
     # scrape info from linkedin
     if mock:
         linkedin_profile_url = os.getenv("TEST_JSON_URL")

@@ -6,6 +6,7 @@ langchain-ollama==0.2.3
 langchain-openai==0.3.4
 langchain-text-splitters==0.3.6
 langchainhub==0.1.21
+pydantic==2.11.0a2
 python-dotenv==1.0.1
 # twitter api wrapper - to get info from twitter API is paid since 2024
 tweepy==4.15.0
