@@ -1,0 +1,5 @@
+black==25.1.0
+langchain==0.3.19
+langchain-ollama==0.2.3
+langchain-openai==0.3.7
+python-dotenv==1.0.1
